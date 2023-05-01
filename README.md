@@ -1,4 +1,4 @@
-# _StyleMate
+# StyleMate
 
 StyleMate is an online outfit curator that helps people get dresses as per their latest fashion. 
 

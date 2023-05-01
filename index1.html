@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Image Search</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> 
+    <link rel="stylesheet" href="css/index1.css">
+    <script>
+      $(document).ready(function() {
+        $("#search-form").on("submit", function(event) {
+          event.preventDefault();
+          var query = $("#search-box").val();
+          var apikey = "AIzaSyAY5GomLyDCMxqTQ1UugUqqiYNNZFXlwio";
+          var cseid = "a0f75123d6e714570";
+          var url = "https://www.googleapis.com/customsearch/v1?key=" + apikey + "&cx=" + cseid + "&q=" + query + "&searchType=image";
+          $.getJSON(url, function(data) {
+            var results = data.items;
+            var html = "";
+            $.each(results, function(index, item) {
+              if (index % 4 == 0) {
+                html += '<div class="row">';
+              }
+              html += '<div class="result">';
+              html += '<a href="' + item.link + '" target="_blank">';
+              html += '<img class="image"  src="' + item.image.thumbnailLink + '" alt="' + item.title + '">';
+              html += '</a>';
+             /* html += '<div class="title">' + item.title + '</div>';
+              html += '<div class="snippet">' + item.snippet + '</div>'; */
+              html += '</div>';
+              if ((index + 1) % 4 == 0 || index == results.length - 1) {
+                html += '</div>';
+              }
+            });
+            $("#results").html(html);
+          });
+        });
+      });
+    </script>
+  </head>
+  <body style = "background-color: rgba(158, 156, 156, 0.2); margin:0px;">
+    <div style = "height: 80px; background-color: #A1D1DB; margin-top:0; padding:0;">
+      <a href="index.html" class="main-nav__logo" style = "margin-left: 550px;">
+        <img src="Logo.png" class="main-logo" width="123" alt="Awesome Image" />
+    </a>
+    </div>
+  
+    <h1 class = "title" style = "margin-top: 85px; margin-bottom: 36px;font-family: Arial; font-size: 35px; color: black; font-weight: bold;">Search For Your Outfit</h1>
+    <form id="search-form">
+      <input type="text" id="search-box" name="search-box" required placeholder = "Enter A Part of Your Existing Wordrobe..." style = "height: 40px; width: 500px; border: 3px solid black; border-radius: 30px; font-family:Arial; font-size: 18px; padding-left: 22px; ">
+      <button type="submit" class = "submit" style = "background-color: rgba(158, 156, 156, 0.2);">
+        <img class = "search-icon" src = "search.svg">
+      </button>
+
+    </form>
+    <div id="results"></div>
+  </body>
+</html>

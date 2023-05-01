@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel = "stylesheet" href = "css/header.css">
+    <link rel = "stylesheet" href = "css/slider.css">
+    <link rel = "stylesheet" href = "css/category.css">
+    <link rel = "stylesheet" href = "css/my_account.css">
+    <title>Shop</title>
+</head>
+
+<body style = "height: 500px;">
+    <div class = "sidebar" style = "z-index: 120;">
+        <div class = "header-left" style = " margin-top: 30px; font-size: 20px;">
+            <div class = "header_logo">
+                <div>
+                    <span>My Account</span>
+                </div>
+                <div>
+                    <a href = "my_account.html">
+                        <img src = "Arrow.svg">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class = "sidebar_divisions">
+            <a href = "index.html">
+                Home
+            </a>
+            <a href = "outfits.html">
+                Search Outfits
+            </a>
+            <a href = "about.html">
+                About
+            </a>
+            <a href = "contact.html">
+                Contact Us
+            </a>
+            <a href = "login.html">
+                Login
+            </a>
+        </div>
+    </div>
+    <header style = "opacity: 0.5;">
+        <div class = "logo"  style = "margin-left: 590px;">
+            <img src = "Logo.png">
+        </div>
+
+        <div class = "search_bar">
+            <div class = "search-location">
+                <!-- <input type = "text" placeholder = "Search" class = "input_box" autofocus = "true"> -->
+                <button type="submit" class = "search-button">
+                    <a href="outfits.html">
+                        <img class = "search-icon" src = "search.svg">
+                    </a>
+                </button>
+                <!-- <p>Search</p> -->
+            </div>
+            <div>
+                <p>About Us</p>
+            </div>
+    
+            <div>
+                <p>Contact</p>
+            </div>
+        </div>
+
+    </header>
+<!-- Slider -->
+    <div class = "slider" style = "opacity: 0.5;">
+        <!-- <button class = "pre-btn">
+            <img src = "slider_img/left-arrow.svg">
+        </button> -->
+
+        <div class = "slider_container">
+            <img src = "slider_img/slider1.jpeg" class = "slide">
+            <!-- <img src = "https://picsum.photos/id/238/1000/400" class = "slide">
+            <img src = "https://picsum.photos/id/239/1000/400" class = "slide">
+            <img src = "https://picsum.photos/id/236/1000/400" class = "slide"> -->
+    
+        </div>
+        <button class = "shop-now">Shop Now</button>
+        <!-- <button class = "nxt-btn">
+            <img src = "slider_img/right-arrow.svg">
+        </button> -->
+    </div>
+
+    <!-- <div class = "slider_nav">
+        <button onclick = "goPrev()">prev</button>
+        <button onclick = "goNext()">next</button>
+    </div> -->
+
+    <script src = "js/slider.js"></script>
+</body>
+</html>
